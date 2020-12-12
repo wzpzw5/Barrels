@@ -38,13 +38,6 @@ public class Barrels extends JavaPlugin implements SlimefunAddon {
         instance = this;
         Config config = new Config(this);
 
-        // Setting up the Auto-Updater
-        Updater updater = new GitHubBuildsUpdater(this, getFile(), "John000708/Barrels/master");
-
-        if (config.getBoolean("options.auto-update")) {
-            updater.start();
-        }
-
         new DisplayListener(this);
         new WorldListener(this);
 
