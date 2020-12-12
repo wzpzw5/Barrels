@@ -41,7 +41,7 @@ class BarrelsMenuPreset extends BlockMenuPreset {
 
         barrel.updateCapacityItem(menu, barrel.getCapacity(b), 0);
         if (BlockStorage.getLocationInfo(b.getLocation(), "storedItems") == null) {
-            menu.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7Empty"), false);
+            menu.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7空"), false);
         }
 
         if (Barrels.displayItem()) {

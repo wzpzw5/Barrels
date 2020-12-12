@@ -86,7 +86,7 @@ class BarrelsBlockHandler implements SlimefunBlockHandler {
             b.getWorld().dropItem(b.getLocation(), new CustomItem(item, amount));
         }
         BlockStorage.addBlockInfo(b, "storedItems", null);
-        inv.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7Empty"), false);
+        inv.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7空"), false);
 
         return true;
     }

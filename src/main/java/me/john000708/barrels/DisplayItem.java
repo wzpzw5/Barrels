@@ -25,7 +25,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.data.PersistentDataAPI;
 public final class DisplayItem {
 
     public static final NamespacedKey NAMESPACED_KEY = new NamespacedKey(Barrels.getInstance(), "display_item");
-    public static final String NAME = ChatColor.translateAlternateColorCodes('&', "&cBarrelDisplayItem&8-&7");
+    public static final String NAME = ChatColor.translateAlternateColorCodes('&', "&c物品预览&8-&7");
 
     private DisplayItem() {}
 
@@ -36,7 +36,7 @@ public final class DisplayItem {
         }
 
         ItemStack displayItem = new ItemStack(Material.BARRIER, 1);
-        String nametag = ChatColor.RED + "Empty";
+        String nametag = ChatColor.RED + "空";
         BlockMenu menu = BlockStorage.getInventory(b);
 
         if (BlockStorage.getLocationInfo(b.getLocation(), "storedItems") != null) {

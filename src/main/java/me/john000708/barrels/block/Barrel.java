@@ -190,7 +190,7 @@ public class Barrel extends SlimefunItem {
 
             if (storedAmount <= 0) {
                 BlockStorage.addBlockInfo(b, "storedItems", null);
-                inventory.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7Empty"), false);
+                inventory.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7空"), false);
             }
             else {
                 BlockStorage.addBlockInfo(b, "storedItems", String.valueOf(storedAmount));
