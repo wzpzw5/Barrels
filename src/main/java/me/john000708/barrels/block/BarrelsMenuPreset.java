@@ -25,8 +25,13 @@ class BarrelsMenuPreset extends BlockMenuPreset {
 
     private final Barrel barrel;
 
+<<<<<<< HEAD
     public BarrelsMenuPreset(Barrel barrel, String title) {
         super(barrel.getId(), title);
+=======
+    public BarrelsMenuPreset(Barrel barrel) {
+        super(barrel.getId(), barrel.getInventoryTitle());
+>>>>>>> upstream/master
 
         this.barrel = barrel;
     }
@@ -38,8 +43,11 @@ class BarrelsMenuPreset extends BlockMenuPreset {
 
     @Override
     public void newInstance(BlockMenu menu, Block b) {
+<<<<<<< HEAD
 
         barrel.updateCapacityItem(menu, barrel.getCapacity(b), 0);
+=======
+>>>>>>> upstream/master
         if (BlockStorage.getLocationInfo(b.getLocation(), "storedItems") == null) {
             menu.replaceExistingItem(22, new CustomItem(Material.BARRIER, "&7空"), false);
         }
@@ -48,6 +56,12 @@ class BarrelsMenuPreset extends BlockMenuPreset {
             boolean hasRoom = b.getRelative(BlockFace.UP).getType() == Material.AIR;
             DisplayItem.updateDisplayItem(b, barrel.getCapacity(b), hasRoom);
         }
+    }
+    
+    @Override
+    protected ItemStack onItemStackChange(DirtyChestMenu menu, int slot, ItemStack previous, ItemStack next) {
+        barrel.updateBarrel(((BlockMenu) menu).getBlock());
+        return next;
     }
 
     private void constructMenu(BlockMenuPreset preset) {
